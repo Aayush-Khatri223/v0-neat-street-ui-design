@@ -1,5 +1,857 @@
-[00:00:00.925] Server  LOG      ✓ Ready in 661ms
-[00:00:18.141] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.290] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:18.290] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
-[00:00:18.290] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3000/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765378993465}
+[00:00:07.829] Server  LOG      ✓ Ready in 6.7s
+[00:00:11.872] Server  LOG      ○ Compiling / ...
+[00:00:18.419] Server  LOG      ○ Compiling /dashboard ...
+[00:00:22.274] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.745] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:23.251] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:23.251] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:00:23.251] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765385895865}
+[00:00:24.191] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:24.191] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:00:24.191] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765385896798}
+[00:03:09.058] Server  LOG      ✓ Compiled in 401ms
+[00:04:11.371] Server  LOG      ✓ Compiled in 1244ms
+[00:04:38.441] Server  LOG      ✓ Compiled in 165ms
+[00:05:13.609] Server  LOG      ✓ Compiled in 1818ms
+[00:05:14.366] Browser ERROR   uncaughtError: ReferenceError: JunctionMarker is not defined
+[00:05:15.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:16.219] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:05:16.219] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:05:16.219] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765386188826}
+[00:05:26.880] Browser ERROR   uncaughtError: ReferenceError: JunctionMarker is not defined
+[00:05:38.604] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:38.606] Server  LOG      ✓ Compiled in 202ms
+[00:05:39.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:40.260] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:05:40.260] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:05:40.260] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765386212872}
+[00:06:05.498] Server  LOG      ✓ Compiled in 383ms
+[00:11:22.225] Server  LOG      ✓ Compiled in 1005ms
+[00:11:23.134] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'appendChild')
+[00:11:23.134] Browser ERROR   uncaughtError: Error: Map container is being reused by another instance
+[00:11:37.713] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:37.713] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765386570278}
+[00:11:37.874] Server  LOG      ✓ Compiled in 1032ms
+[00:11:39.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:41.639] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:41.639] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:11:41.639] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765386574256}
+[00:11:59.735] Browser LOG     Real-time update received: {"commit_timestamp":"2025-12-10T17:09:51.547Z","errors":null,"eventType":"INSERT","new":{"cost":1600,"created_at":"2025-12-10T17:09:51.499208+00:00","id":"15196431-e15e-4b33-871d-ee915f1aa79a","image_url":null,"location":"Office","logged_at":"2025-12-10T06:15:00+00:00","notes":null,"user_id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2","waste_type_id":"11977979-997c-41c0-8ddf-9f80e6fd1f97","weight":200},"old":{},"schema":"public","table":"waste_logs"}
+[00:11:59.735] Browser LOG     Profile update received: {"commit_timestamp":"2025-12-10T17:09:51.547Z","errors":null,"eventType":"UPDATE","new":{"avatar_url":null,"created_at":"2025-12-10T07:04:58.799321+00:00","email":"shtsujal270@gmail.com","full_name":"","green_score":0,"id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2","is_admin":false,"total_cost_saved":0,"total_waste_logged":300,"updated_at":"2025-12-10T17:09:51.499208+00:00","username":"Sujal54"},"old":{"id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2"},"schema":"public","table":"profiles"}
+[00:12:00.245] Browser LOG     Real-time update received: {"commit_timestamp":"2025-12-10T17:09:51.547Z","errors":null,"eventType":"INSERT","new":{"cost":1600,"created_at":"2025-12-10T17:09:51.499208+00:00","id":"15196431-e15e-4b33-871d-ee915f1aa79a","image_url":null,"location":"Office","logged_at":"2025-12-10T06:15:00+00:00","notes":null,"user_id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2","waste_type_id":"11977979-997c-41c0-8ddf-9f80e6fd1f97","weight":200},"old":{},"schema":"public","table":"waste_logs"}
+[00:12:00.245] Browser LOG     Profile update received: {"commit_timestamp":"2025-12-10T17:09:51.547Z","errors":null,"eventType":"UPDATE","new":{"avatar_url":null,"created_at":"2025-12-10T07:04:58.799321+00:00","email":"shtsujal270@gmail.com","full_name":"","green_score":0,"id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2","is_admin":false,"total_cost_saved":0,"total_waste_logged":300,"updated_at":"2025-12-10T17:09:51.499208+00:00","username":"Sujal54"},"old":{"id":"4cfcaf05-ce13-4770-b3c4-25aca36c77b2"},"schema":"public","table":"profiles"}
+[00:12:16.025] Server  LOG      ✓ Compiled in 357ms
+[00:15:44.213] Server  LOG      ✓ Compiled in 492ms
+[00:15:44.571] Browser ERROR   uncaughtError: ReferenceError: SELECTED_HOUSE_INDICES is not defined
+[00:15:58.197] Server  LOG      ✓ Compiled in 694ms
+[00:15:59.231] Browser ERROR   ./components/map/live-route-map.tsx:129:3
+Parsing ecmascript source code failed
+  127 |   return [housePosition, midPoint, junctionPosition]
+  128 | }
+> 129 |   }
+      |   ^
+  130 |   
+  131 |   return [housePosition, midPoint, junctionPosition]
+  132 | }
+
+Expression expected
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:15:59.239] Browser ERROR   ./components/map/live-route-map.tsx:129:3
+Parsing ecmascript source code failed
+  127 |   return [housePosition, midPoint, junctionPosition]
+  128 | }
+> 129 |   }
+      |   ^
+  130 |   
+  131 |   return [housePosition, midPoint, junctionPosition]
+  132 | }
+
+Expression expected
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:16:10.235] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:16:10.259] Server  LOG      ✓ Compiled in 198ms
+[00:16:12.167] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:12.513] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:16:12.513] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:16:12.513] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765386845126}
+[00:17:21.280] Server  LOG      ✓ Compiled in 516ms
+[00:21:15.673] Server  LOG      ✓ Compiled in 1840ms
+[00:21:16.232] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'appendChild')
+[00:21:16.232] Browser ERROR   uncaughtError: Error: Map container is being reused by another instance
+[00:21:19.028] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:19.882] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:21:19.882] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:21:19.882] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387152493}
+[00:27:15.935] Server  LOG      ✓ Compiled in 231ms
+[00:28:12.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:13.197] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:28:13.197] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:28:13.197] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387565564}
+[00:29:57.945] Server  LOG      ✓ Compiled in 213ms
+[00:29:58.268] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'appendChild')
+[00:29:58.268] Browser ERROR   uncaughtError: Error: Map container is being reused by another instance
+[00:30:34.164] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:30:34.200] Server  LOG      ✓ Compiled in 241ms
+[00:30:38.967] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387709233}
+[00:30:40.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:43.192] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:30:43.192] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:30:43.192] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387715347}
+[00:33:35.412] Server  LOG      ✓ Compiled in 509ms
+[00:33:37.194] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'appendChild')
+[00:33:37.194] Browser ERROR   uncaughtError: Error: Map container is being reused by another instance
+[00:34:06.295] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:34:06.353] Server  LOG      ✓ Compiled in 118ms
+[00:34:06.411] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387919024}
+[00:34:09.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:10.366] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:34:10.366] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:34:10.366] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765387922965}
+[00:38:51.890] Server  LOG      ✓ Compiled in 1196ms
+[00:39:18.046] Server  LOG      ✓ Compiled in 1161ms
+[00:39:20.727] Browser LOG     OSRM returned 142 points for truck route
+[00:39:20.778] Browser LOG     OSRM returned 142 points for truck route
+[00:39:21.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:22.641] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:39:22.641] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:39:22.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765388235255}
+[00:39:33.199] Browser LOG     OSRM returned 142 points for truck route
+[00:39:34.197] Browser LOG     OSRM returned 142 points for truck route
+[00:39:59.725] Server  LOG      ✓ Compiled in 1019ms
+[00:40:23.834] Server  LOG      ✓ Compiled in 265ms
+[00:44:12.665] Server  LOG      ✓ Compiled in 502ms
+[00:44:12.666] Browser ERROR   uncaughtError: ReferenceError: COLLECTION_JUNCTION is not defined
+[00:46:08.647] Server  LOG      ✓ Compiled in 312ms
+[00:46:08.698] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:09.195] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765388641623}
+[00:46:10.593] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:12.188] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:46:12.188] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:46:12.188] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765388643863}
+[00:46:24.184] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:46:41.372] Server  LOG      ✓ Compiled in 681ms
+[00:46:42.181] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:46:47.188] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:46:54.190] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:46:57.191] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:47:28.185] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:47:32.190] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:47:53.608] Server  LOG      ✓ Compiled in 229ms
+[00:47:54.189] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:47:55.185] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:17.422] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:25.933] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:45.391] Server  ERROR    ⨯ ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:48:45.573] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:48.471] Server  LOG      ○ Compiling /_error ...
+[00:48:48.558] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:48.995] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:53.687] Browser ERROR   uncaughtError: Error: ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:48:53.977] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:48:54.087] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:07.996] Server  ERROR    ⨯ ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:49:08.555] Browser ERROR   uncaughtError: Error: ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:49:08.907] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:08.907] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:08.907] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:08.907] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:23.395] Server  LOG     
+[00:49:23.396] Server  LOG     Could not open live-route-map.tsx in the editor.
+[00:49:23.396] Server  LOG     
+[00:49:23.397] Server  LOG     When running on Windows, file names are checked against an access list to protect against remote code execution attacks. File names may consist only of alphanumeric characters (all languages), periods, dashes, slashes, and underscores.
+[00:49:23.398] Server  LOG     
+[00:49:53.042] Server  ERROR    ⨯ ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:49:54.202] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:54.202] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:54.202] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:54.253] Browser ERROR   uncaughtError: Error: ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+
+
+[00:49:54.512] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:54.729] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:49:56.185] Browser ERROR   ./components/map/live-route-map.tsx:579:9
+Ecmascript file had an error
+  577 |
+  578 |   // Completed path (truck has traveled) - based on our animation progress
+> 579 |   const completedPathCoords = useMemo(() => {
+      |         ^^^^^^^^^^^^^^^^^^^
+  580 |     const routeToUse = osrmTruckRoute.length > 0 ? osrmTruckRoute : ROUTE_WAYPOINTS
+  581 |     const completedIndex = Math.floor((routeProgress / 100) * routeToUse.length)
+  582 |     return routeToUse
+
+the name `completedPathCoords` is defined multiple times
+
+Import trace:
+  Client Component Browser:
+    ./components/map/live-route-map.tsx [Client Component Browser]
+    ./components/map/map-wrapper.tsx [Client Component Browser]
+    ./components/vehicle-route.tsx [Client Component Browser]
+    ./components/dashboard-client.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Client Component Browser]
+    ./app/dashboard/page.tsx [Server Component]
+[00:50:10.867] Server  LOG      ✓ Compiled in 91ms
+[00:50:13.180] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:14.852] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:50:14.853] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:50:14.853] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765388887454}
+[00:50:17.321] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:19.195] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:50:19.196] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:50:19.196] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765388890814}
+[00:50:30.432] Browser LOG     OSRM returned 141 points for truck route
+[00:50:31.437] Browser LOG     OSRM returned 141 points for truck route
+[00:53:11.509] Server  LOG      ✓ Compiled in 186ms
+[00:53:11.666] Browser ERROR   uncaughtError: ReferenceError: junctions is not defined
+[00:53:38.461] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:38.544] Server  LOG      ✓ Compiled in 159ms
+[00:53:38.595] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765389091187}
+[00:53:40.089] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:40.959] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:53:40.959] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[00:53:40.959] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765389093574}
+[00:53:53.380] Browser LOG     OSRM returned 141 points for truck route
+[00:53:54.028] Browser LOG     OSRM returned 141 points for truck route
+[00:55:31.189] Browser LOG     Profile update received: {"commit_timestamp":"2025-12-10T17:53:22.591Z","errors":null,"eventType":"UPDATE","new":{"avatar_url":null,"created_at":"2025-12-10T08:31:47.518522+00:00","email":"khatriaayush689@gmail.com","full_name":"","green_score":0,"id":"d25c1789-cfcd-404d-a8ac-dd34088ae06d","is_admin":false,"total_cost_saved":0,"total_waste_logged":23,"updated_at":"2025-12-10T17:53:22.576935+00:00","username":"aayush"},"old":{"id":"d25c1789-cfcd-404d-a8ac-dd34088ae06d"},"schema":"public","table":"profiles"}
+[01:00:12.627] Server  LOG      ✓ Compiled in 147ms
+[01:03:18.160] Server  LOG      ✓ Compiled in 158ms
+[01:03:32.322] Server  LOG      ✓ Compiled in 415ms
+[01:04:33.223] Server  LOG      ✓ Compiled in 166ms
+[01:05:28.170] Server  LOG      ✓ Compiled in 184ms
+[01:05:42.211] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:42.833] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:05:42.833] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[01:05:42.833] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765389815440}
+[01:05:51.266] Browser LOG     OSRM returned 11 points for truck route
+[01:05:52.247] Browser LOG     OSRM returned 11 points for truck route
+[01:07:41.356] Server  LOG      ✓ Compiled in 195ms
+[01:08:14.107] Server  LOG      ✓ Compiled in 235ms
+[01:08:14.461] Browser ERROR   uncaughtError: ReferenceError: collectionJunction is not defined
+[01:08:31.493] Server  LOG      ✓ Compiled in 119ms
+[01:08:31.501] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:08:31.629] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765389984229}
+[01:08:33.112] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:33.599] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:08:33.599] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[01:08:33.599] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765389986208}
+[01:08:41.753] Browser ERROR   uncaughtError: ReferenceError: collectionJunction is not defined
+[01:08:49.628] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:50.300] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:08:50.300] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/dashboard","route":"/dashboard"}
+[01:08:50.300] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/dashboard color: rgb(120, 120, 120) color: inherit {"dp":"/dashboard","o":"http://localhost:3001/dashboard","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765390002913}
+[01:09:36.002] Browser LOG     OSRM returned 83 points for truck route
+[01:09:37.155] Browser LOG     OSRM returned 83 points for truck route
