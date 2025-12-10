@@ -39,20 +39,22 @@ function generateRoutePath(points: Coordinate[]): Coordinate[] {
 
 /**
  * Durbar Square Route - Morning Collection
- * Covers Bhaktapur Durbar Square and surrounding heritage areas
+ * Covers Bhaktapur area following actual road network visible in map
+ * Road: Kedarnath Temple → Mul Chowk → Yalachhen (diagonal road) → Sunrise Bank
+ * The road goes DIAGONALLY from southwest to northeast
  */
 export const downtownRoute: RouteMapData = {
   id: 'route-downtown-001',
-  name: 'Durbar Square Morning',
+  name: 'Yalachhen Morning Route',
   status: 'active',
-  totalDistance: 3.5,
-  estimatedDuration: '1h 45m',
-  startPoint: { lat: 27.6721, lng: 85.4279 },
-  endPoint: { lat: 27.6744, lng: 85.4329 },
+  totalDistance: 1.2,
+  estimatedDuration: '45m',
+  startPoint: { lat: 27.6693, lng: 85.4252 },
+  endPoint: { lat: 27.6718, lng: 85.4375 },
   vehicle: {
     id: 'truck-001',
     name: 'ECO-001',
-    position: { lat: 27.6728, lng: 85.4295 },
+    position: { lat: 27.6705, lng: 85.4305 },
     heading: 45,
     speed: 15,
     status: 'moving',
@@ -62,8 +64,8 @@ export const downtownRoute: RouteMapData = {
   pickupPoints: [
     {
       id: 'stop-001',
-      position: { lat: 27.6721, lng: 85.4279 },
-      address: 'Bhaktapur Durbar Square',
+      position: { lat: 27.6693, lng: 85.4252 },
+      address: 'Kedarnath Temple',
       scheduledTime: '06:00 AM',
       expectedWaste: 45,
       status: 'completed',
@@ -71,67 +73,57 @@ export const downtownRoute: RouteMapData = {
     },
     {
       id: 'stop-002',
-      position: { lat: 27.6725, lng: 85.4288 },
-      address: 'Nyatapola Temple Area',
-      scheduledTime: '06:20 AM',
+      position: { lat: 27.6697, lng: 85.4270 },
+      address: 'Mul Chowk Yamawar',
+      scheduledTime: '06:15 AM',
       expectedWaste: 32,
       status: 'completed',
       order: 2,
     },
     {
       id: 'stop-003',
-      position: { lat: 27.6728, lng: 85.4295 },
-      address: 'Taumadhi Square',
-      scheduledTime: '06:40 AM',
+      position: { lat: 27.6705, lng: 85.4305 },
+      address: 'Yalachhen Junction',
+      scheduledTime: '06:30 AM',
       expectedWaste: 28,
       status: 'in-progress',
       order: 3,
     },
     {
       id: 'stop-004',
-      position: { lat: 27.6732, lng: 85.4305 },
-      address: 'Pottery Square',
-      scheduledTime: '07:00 AM',
+      position: { lat: 27.6712, lng: 85.4340 },
+      address: 'Near Sunrise Bank',
+      scheduledTime: '06:45 AM',
       expectedWaste: 55,
       status: 'pending',
       order: 4,
     },
     {
       id: 'stop-005',
-      position: { lat: 27.6736, lng: 85.4312 },
-      address: 'Tachupal Tole',
-      scheduledTime: '07:25 AM',
+      position: { lat: 27.6718, lng: 85.4375 },
+      address: 'Sata Pharm Area',
+      scheduledTime: '07:00 AM',
       expectedWaste: 41,
       status: 'pending',
       order: 5,
     },
-    {
-      id: 'stop-006',
-      position: { lat: 27.6740, lng: 85.4320 },
-      address: 'Dattatreya Square',
-      scheduledTime: '07:45 AM',
-      expectedWaste: 38,
-      status: 'pending',
-      order: 6,
-    },
-    {
-      id: 'stop-007',
-      position: { lat: 27.6744, lng: 85.4329 },
-      address: 'Wakupati Narayan Temple',
-      scheduledTime: '08:05 AM',
-      expectedWaste: 62,
-      status: 'pending',
-      order: 7,
-    },
   ],
+  // Route path following the DIAGONAL road from Kedarnath Temple to Sunrise Bank
+  // This road goes from southwest to northeast at approximately 45 degree angle
   routePath: generateRoutePath([
-    { lat: 27.6721, lng: 85.4279 },
-    { lat: 27.6725, lng: 85.4288 },
-    { lat: 27.6728, lng: 85.4295 },
-    { lat: 27.6732, lng: 85.4305 },
-    { lat: 27.6736, lng: 85.4312 },
-    { lat: 27.6740, lng: 85.4320 },
-    { lat: 27.6744, lng: 85.4329 },
+    { lat: 27.6693, lng: 85.4252 },  // Start: Kedarnath Temple
+    { lat: 27.6695, lng: 85.4260 },  // Road going northeast
+    { lat: 27.6697, lng: 85.4270 },  // Mul Chowk junction
+    { lat: 27.6699, lng: 85.4280 },  // Continuing diagonal
+    { lat: 27.6701, lng: 85.4290 },  // Along Yalachhen road
+    { lat: 27.6703, lng: 85.4298 },  // Road continues diagonal
+    { lat: 27.6705, lng: 85.4305 },  // Central junction (Collection Point)
+    { lat: 27.6707, lng: 85.4315 },  // Continuing northeast
+    { lat: 27.6709, lng: 85.4325 },  // Road still diagonal
+    { lat: 27.6711, lng: 85.4335 },  // Approaching Sunrise Bank
+    { lat: 27.6714, lng: 85.4350 },  // Near Sunrise Bank
+    { lat: 27.6716, lng: 85.4362 },  // Past bank
+    { lat: 27.6718, lng: 85.4375 },  // End: Sata Pharm area
   ]),
 }
 

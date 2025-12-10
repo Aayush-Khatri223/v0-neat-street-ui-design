@@ -289,3 +289,50 @@
   font-family: inherit;
   z-index: 0;
 }
+
+/* ============================================
+   Junction Marker Styles
+   ============================================ */
+.junction-marker,
+.nearest-junction-marker {
+  background: transparent;
+  border: none;
+}
+
+.junction-marker-inner,
+.nearest-junction-marker-inner {
+  transition: transform 0.2s ease;
+}
+
+.junction-marker:hover .junction-marker-inner,
+.nearest-junction-marker:hover .nearest-junction-marker-inner {
+  transform: scale(1.15);
+}
+
+/* Pulse animation for nearest junction */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(245, 158, 11, 0.8), 0 0 30px rgba(245, 158, 11, 0.4);
+  }
+}
+
+/* ============================================
+   Selected House Marker Styles
+   ============================================ */
+.selected-house-marker {
+  background: transparent;
+  border: none;
+}
+
+.selected-house-marker-inner {
+  transition: transform 0.2s ease;
+}
+
+.selected-house-marker:hover .selected-house-marker-inner {
+  transform: scale(1.15);
+}

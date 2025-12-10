@@ -1,6 +1,6 @@
 "use client"
 
-import { Leaf, BarChart3, Droplet, DollarSign, Trophy, Truck, LogOut } from "lucide-react"
+import { Leaf, BarChart3, Droplet, DollarSign, Truck, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface NavigationProps {
@@ -31,7 +31,6 @@ export default function Navigation({
     { id: "waste-types", label: "Waste Guide", icon: Leaf },
     { id: "cost", label: "Cost Tracker", icon: DollarSign },
     { id: "vehicle", label: "Vehicle Route", icon: Truck },
-    { id: "achievements", label: "Achievements", icon: Trophy },
   ]
 
   const adminNavItems = [

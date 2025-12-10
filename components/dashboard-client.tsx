@@ -11,7 +11,6 @@ import AddWasteLog from "@/components/add-waste-log"
 import WasteTypes from "@/components/waste-types"
 import CostCalculator from "@/components/cost-calculator"
 import VehicleRoute from "@/components/vehicle-route"
-import Achievements from "@/components/achievements"
 import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react"
 
@@ -73,7 +72,6 @@ export default function DashboardClient({ user, isAdmin, username }: { user: any
         {!isAuthenticatedAdmin && currentPage === "waste-types" && <WasteTypes />}
         {!isAuthenticatedAdmin && currentPage === "cost" && <CostCalculator />}
         {!isAuthenticatedAdmin && currentPage === "vehicle" && <VehicleRoute />}
-        {!isAuthenticatedAdmin && currentPage === "achievements" && <Achievements />}
 
         {/* Admin views - ONLY shown if authenticated as admin via password */}
         {isAuthenticatedAdmin && currentPage === "dashboard" && <AdminDashboard />}

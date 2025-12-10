@@ -362,6 +362,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
  * - Custom markers for vehicle and pickup points
  * - Responsive design for desktop and mobile
  * - Lazy loading for performance optimization
+ * - Junction markers with nearest junction highlighting for selected houses
  */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/shared/lib/app-dynamic.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-client] (ecmascript)");
@@ -394,6 +395,83 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
+// Define junctions in the Bhaktapur area
+const JUNCTIONS = [
+    {
+        id: 'junction-1',
+        position: {
+            lat: 27.6723,
+            lng: 85.4283
+        },
+        name: 'Durbar Square Junction'
+    },
+    {
+        id: 'junction-2',
+        position: {
+            lat: 27.6730,
+            lng: 85.4300
+        },
+        name: 'Taumadhi Junction'
+    },
+    {
+        id: 'junction-3',
+        position: {
+            lat: 27.6738,
+            lng: 85.4316
+        },
+        name: 'Pottery Square Junction'
+    },
+    {
+        id: 'junction-4',
+        position: {
+            lat: 27.6742,
+            lng: 85.4325
+        },
+        name: 'Dattatreya Junction'
+    },
+    {
+        id: 'junction-5',
+        position: {
+            lat: 27.6735,
+            lng: 85.4308
+        },
+        name: 'Tachupal Junction'
+    }
+];
+// Selected houses for junction analysis (picking 3 from pickup points)
+const SELECTED_HOUSE_INDICES = [
+    0,
+    2,
+    4
+] // Select 1st, 3rd, and 5th pickup points
+;
+// Calculate distance between two coordinates (Haversine formula)
+function calculateDistance(coord1, coord2) {
+    const R = 6371 // Earth's radius in km
+    ;
+    const dLat = (coord2.lat - coord1.lat) * Math.PI / 180;
+    const dLng = (coord2.lng - coord1.lng) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(coord1.lat * Math.PI / 180) * Math.cos(coord2.lat * Math.PI / 180) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c * 1000 // Return distance in meters
+    ;
+}
+// Find nearest junction for a given position
+function findNearestJunction(position) {
+    let nearest = JUNCTIONS[0];
+    let minDistance = calculateDistance(position, JUNCTIONS[0].position);
+    for (const junction of JUNCTIONS){
+        const distance = calculateDistance(position, junction.position);
+        if (distance < minDistance) {
+            minDistance = distance;
+            nearest = junction;
+        }
+    }
+    return {
+        junction: nearest,
+        distance: minDistance
+    };
+}
 ;
 // Dynamically import map components to prevent SSR issues with Leaflet
 const MapContainer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.A("[project]/node_modules/react-leaflet/lib/index.js [app-client] (ecmascript, next/dynamic entry, async loader)").then((mod)=>mod.MapContainer), {
@@ -624,7 +702,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 252,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -632,7 +710,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: vehicleState.name
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 253,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -640,13 +718,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: vehicleState.status
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 256,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 207,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -657,7 +735,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 262,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -665,19 +743,19 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2f$map$2d$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatSpeed"])(vehicleState.speed)
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 219,
+                                        lineNumber: 263,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 217,
+                                lineNumber: 261,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 206,
+                        lineNumber: 250,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -695,20 +773,20 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                 size: 14
                                             }, void 0, false, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 234,
+                                                lineNumber: 278,
                                                 columnNumber: 33
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                                 size: 14
                                             }, void 0, false, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 234,
+                                                lineNumber: 278,
                                                 columnNumber: 55
                                             }, this),
                                             isSimulating ? "Pause" : "Resume"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 272,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -721,14 +799,14 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                 size: 14
                                             }, void 0, false, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 243,
+                                                lineNumber: 287,
                                                 columnNumber: 17
                                             }, this),
                                             "Reset"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 237,
+                                        lineNumber: 281,
                                         columnNumber: 15
                                     }, this)
                                 ]
@@ -740,19 +818,19 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 children: "Close Map"
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 249,
+                                lineNumber: 293,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 225,
+                        lineNumber: 269,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 205,
+                lineNumber: 249,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -764,12 +842,12 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                     }
                 }, void 0, false, {
                     fileName: "[project]/components/map/live-route-map.tsx",
-                    lineNumber: 258,
+                    lineNumber: 302,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 257,
+                lineNumber: 301,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -787,7 +865,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 32
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 314,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -795,18 +873,18 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: "Loading map..."
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 271,
+                                        lineNumber: 315,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 269,
+                                lineNumber: 313,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/map/live-route-map.tsx",
-                            lineNumber: 268,
+                            lineNumber: 312,
                             columnNumber: 13
                         }, this),
                         ("TURBOPACK compile-time value", "object") !== "undefined" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MapContainer, {
@@ -822,7 +900,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                     url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 }, void 0, false, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 286,
+                                    lineNumber: 330,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Polyline, {
@@ -835,7 +913,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 292,
+                                    lineNumber: 336,
                                     columnNumber: 15
                                 }, this),
                                 completedPathCoords.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Polyline, {
@@ -847,14 +925,14 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 304,
+                                    lineNumber: 348,
                                     columnNumber: 17
                                 }, this),
                                 routeData.pickupPoints.map((point)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PickupPointMarker, {
                                         point: point
                                     }, point.id, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 316,
+                                        lineNumber: 360,
                                         columnNumber: 17
                                     }, this)),
                                 vehicleIcon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Marker, {
@@ -876,14 +954,14 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                 className: "text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 328,
+                                                                lineNumber: 372,
                                                                 columnNumber: 25
                                                             }, this),
                                                             vehicleState.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                        lineNumber: 327,
+                                                        lineNumber: 371,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -898,13 +976,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                         children: vehicleState.status
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                                        lineNumber: 333,
+                                                                        lineNumber: 377,
                                                                         columnNumber: 35
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 332,
+                                                                lineNumber: 376,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -916,13 +994,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2f$map$2d$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatSpeed"])(vehicleState.speed)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                                        lineNumber: 336,
+                                                                        lineNumber: 380,
                                                                         columnNumber: 34
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 335,
+                                                                lineNumber: 379,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -937,30 +1015,30 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                                        lineNumber: 339,
+                                                                        lineNumber: 383,
                                                                         columnNumber: 41
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 338,
+                                                                lineNumber: 382,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                        lineNumber: 331,
+                                                        lineNumber: 375,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 326,
+                                                lineNumber: 370,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/map/live-route-map.tsx",
-                                            lineNumber: 325,
+                                            lineNumber: 369,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Tooltip, {
@@ -975,35 +1053,35 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                 children: vehicleState.name
                                             }, void 0, false, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 345,
+                                                lineNumber: 389,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/map/live-route-map.tsx",
-                                            lineNumber: 344,
+                                            lineNumber: 388,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 321,
+                                    lineNumber: 365,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/map/live-route-map.tsx",
-                            lineNumber: 277,
+                            lineNumber: 321,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/map/live-route-map.tsx",
-                    lineNumber: 266,
+                    lineNumber: 310,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 265,
+                lineNumber: 309,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1020,7 +1098,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 358,
+                                        lineNumber: 402,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1028,13 +1106,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: "Completed"
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 359,
+                                        lineNumber: 403,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 357,
+                                lineNumber: 401,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1042,13 +1120,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 children: statusInfo.completed
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 361,
+                                lineNumber: 405,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 356,
+                        lineNumber: 400,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1062,7 +1140,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 366,
+                                        lineNumber: 410,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1070,13 +1148,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: "In Progress"
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 367,
+                                        lineNumber: 411,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 365,
+                                lineNumber: 409,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1084,13 +1162,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 children: statusInfo.inProgress
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 369,
+                                lineNumber: 413,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 364,
+                        lineNumber: 408,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1104,7 +1182,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 374,
+                                        lineNumber: 418,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1112,13 +1190,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: "Pending"
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 375,
+                                        lineNumber: 419,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 373,
+                                lineNumber: 417,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1126,13 +1204,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 children: statusInfo.pending
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 377,
+                                lineNumber: 421,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 372,
+                        lineNumber: 416,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1146,7 +1224,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         size: 16
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 382,
+                                        lineNumber: 426,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1154,13 +1232,13 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: "Total Stops"
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 383,
+                                        lineNumber: 427,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 381,
+                                lineNumber: 425,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1168,19 +1246,19 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 children: statusInfo.total
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 385,
+                                lineNumber: 429,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 380,
+                        lineNumber: 424,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 355,
+                lineNumber: 399,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1194,14 +1272,14 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 392,
+                                lineNumber: 436,
                                 columnNumber: 11
                             }, this),
                             "Pickup Points"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 391,
+                        lineNumber: 435,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,7 +1295,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                 children: index + 1
                                             }, void 0, false, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 408,
+                                                lineNumber: 452,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1227,7 +1305,7 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                         children: point.address
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                        lineNumber: 418,
+                                                        lineNumber: 462,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1237,21 +1315,21 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                 size: 12
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 420,
+                                                                lineNumber: 464,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: point.scheduledTime
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 421,
+                                                                lineNumber: 465,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "•"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 422,
+                                                                lineNumber: 466,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1261,25 +1339,25 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                                lineNumber: 423,
+                                                                lineNumber: 467,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                                        lineNumber: 419,
+                                                        lineNumber: 463,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                                lineNumber: 417,
+                                                lineNumber: 461,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 407,
+                                        lineNumber: 451,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1287,30 +1365,30 @@ function LiveRouteMap({ routeData, onClose, autoSimulate = true, simulationSpeed
                                         children: point.status
                                     }, void 0, false, {
                                         fileName: "[project]/components/map/live-route-map.tsx",
-                                        lineNumber: 427,
+                                        lineNumber: 471,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, point.id, true, {
                                 fileName: "[project]/components/map/live-route-map.tsx",
-                                lineNumber: 397,
+                                lineNumber: 441,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/map/live-route-map.tsx",
-                        lineNumber: 395,
+                        lineNumber: 439,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 390,
+                lineNumber: 434,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/map/live-route-map.tsx",
-        lineNumber: 203,
+        lineNumber: 247,
         columnNumber: 5
     }, this);
 }
@@ -1346,7 +1424,7 @@ _c6 = LiveRouteMap;
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/map/live-route-map.tsx",
-                            lineNumber: 453,
+                            lineNumber: 497,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1357,7 +1435,7 @@ _c6 = LiveRouteMap;
                                     children: point.address
                                 }, void 0, false, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 455,
+                                    lineNumber: 499,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1367,14 +1445,14 @@ _c6 = LiveRouteMap;
                                             size: 12
                                         }, void 0, false, {
                                             fileName: "[project]/components/map/live-route-map.tsx",
-                                            lineNumber: 457,
+                                            lineNumber: 501,
                                             columnNumber: 15
                                         }, this),
                                         point.scheduledTime
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 456,
+                                    lineNumber: 500,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1389,13 +1467,13 @@ _c6 = LiveRouteMap;
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/map/live-route-map.tsx",
-                                            lineNumber: 461,
+                                            lineNumber: 505,
                                             columnNumber: 25
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 460,
+                                    lineNumber: 504,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1403,24 +1481,24 @@ _c6 = LiveRouteMap;
                                     children: point.status.charAt(0).toUpperCase() + point.status.slice(1)
                                 }, void 0, false, {
                                     fileName: "[project]/components/map/live-route-map.tsx",
-                                    lineNumber: 463,
+                                    lineNumber: 507,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/map/live-route-map.tsx",
-                            lineNumber: 454,
+                            lineNumber: 498,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/map/live-route-map.tsx",
-                    lineNumber: 452,
+                    lineNumber: 496,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 451,
+                lineNumber: 495,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Tooltip, {
@@ -1438,18 +1516,18 @@ _c6 = LiveRouteMap;
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/map/live-route-map.tsx",
-                    lineNumber: 470,
+                    lineNumber: 514,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/map/live-route-map.tsx",
-                lineNumber: 469,
+                lineNumber: 513,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/map/live-route-map.tsx",
-        lineNumber: 447,
+        lineNumber: 491,
         columnNumber: 5
     }, this);
 }
