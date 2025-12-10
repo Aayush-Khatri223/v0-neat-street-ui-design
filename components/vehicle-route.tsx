@@ -1,10 +1,29 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useMemo } from "react"
+import dynamic from "next/dynamic"
 import { MapPin, Truck, Clock, AlertCircle, Map } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
+import { getRouteByName, mockRoutes } from "@/lib/data/mock-routes"
+import type { RouteMapData } from "@/lib/types/route-map"
+
+// Dynamically import the MapWrapper to enable lazy loading
+const MapWrapper = dynamic(
+  () => import("@/components/map/map-wrapper"),
+  { 
+    ssr: false,
+    loading: () => (
+      <Card className="eco-card p-8">
+        <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+          <Map className="text-primary/30 animate-pulse" size={64} />
+          <p className="text-sm text-muted-foreground">Loading map...</p>
+        </div>
+      </Card>
+    )
+  }
+)
 
 interface RouteStop {
   id: string
@@ -169,36 +188,24 @@ export default function VehicleRoute() {
 
         {currentRoute && (
           <>
-            {/* Map Section */}
+            {/* Map Section - Live Route Map with Vehicle Tracking */}
             {showMap && (
-              <Card className="eco-card p-6 mb-8">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-foreground tracking-tight">
-                    Live Route Map - {currentRoute.name}
-                  </h2>
-                  <Button variant="outline" size="sm" onClick={() => setShowMap(false)}>
-                    Close Map
-                  </Button>
-                </div>
-
-                <div className="bg-muted/20 rounded-lg p-8 border-2 border-dashed border-primary/30">
-                  <div className="flex flex-col items-center justify-center gap-4 min-h-96">
-                    <Map className="text-primary/50" size={64} />
-                    <div className="text-center">
-                      <h3 className="font-semibold text-foreground mb-2">Map Integration Ready</h3>
-                      <p className="text-muted-foreground text-sm max-w-md">
-                        Provide your map API URL and authentication key to display live bus tracking and route
-                        visualization.
-                      </p>
-                    </div>
-                    <div className="mt-4 p-4 bg-secondary/10 rounded-lg max-w-md">
-                      <p className="text-xs text-muted-foreground font-mono">
-                        Ready to integrate: MapBox, Google Maps, or custom API endpoint
-                      </p>
-                    </div>
+              <div className="mb-8">
+                <Card className="eco-card p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xl font-semibold text-foreground tracking-tight">
+                      Live Route Map - {currentRoute.name}
+                    </h2>
                   </div>
-                </div>
-              </Card>
+                  
+                  {/* Render the actual map component */}
+                  <RouteMapSection 
+                    routeName={currentRoute.name}
+                    routeStatus={currentRoute.status}
+                    onClose={() => setShowMap(false)}
+                  />
+                </Card>
+              </div>
             )}
 
             {!showMap && (
@@ -315,5 +322,50 @@ export default function VehicleRoute() {
         )}
       </div>
     </div>
+  )
+}
+
+/**
+ * RouteMapSection - Helper component that matches DB routes with map data
+ * and renders the appropriate map view
+ */
+function RouteMapSection({ 
+  routeName, 
+  routeStatus,
+  onClose 
+}: { 
+  routeName: string
+  routeStatus: string
+  onClose: () => void 
+}) {
+  // Try to match DB route name with mock map data
+  const mapRouteData = useMemo(() => {
+    // First try exact name match
+    let matchedRoute = getRouteByName(routeName)
+    
+    // If no match, use the first route with matching status
+    if (!matchedRoute) {
+      matchedRoute = mockRoutes.find(r => r.status === routeStatus) || mockRoutes[0]
+    }
+    
+    // Override status to match the DB route status
+    if (matchedRoute) {
+      return {
+        ...matchedRoute,
+        name: routeName,
+        status: routeStatus as "active" | "pending" | "completed",
+      }
+    }
+    
+    return mockRoutes[0]
+  }, [routeName, routeStatus])
+
+  return (
+    <MapWrapper
+      routeData={mapRouteData}
+      onClose={onClose}
+      autoSimulate={routeStatus === "active"}
+      simulationSpeed={800}
+    />
   )
 }

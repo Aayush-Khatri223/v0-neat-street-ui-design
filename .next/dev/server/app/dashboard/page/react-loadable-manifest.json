@@ -1,1 +1,18 @@
-{}
+{
+  "[project]/components/map/map-wrapper.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/map/map-wrapper.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_map_live-route-map_tsx_7336367b._.js",
+      "static/chunks/components_map_map-wrapper_tsx_7a31b4b1._.js",
+      "static/chunks/components_map_map-wrapper_tsx_6486c840._.js",
+      "static/chunks/node_modules_60e70f86._.js",
+      "static/chunks/_17e03b5a._.js",
+      "static/chunks/node_modules_leaflet_dist_leaflet_ef5f0413.css",
+      "static/chunks/components_map_live-route-map_tsx_b593f0ec._.js",
+      "static/chunks/node_modules_43da115d._.js",
+      "static/chunks/node_modules_react-leaflet_lib_index_b8ec4d13.js",
+      "static/chunks/node_modules_leaflet_dist_leaflet-src_8608e1e4.js",
+      "static/chunks/node_modules_leaflet_dist_leaflet-src_9a6fb3f8.js"
+    ]
+  }
+}
